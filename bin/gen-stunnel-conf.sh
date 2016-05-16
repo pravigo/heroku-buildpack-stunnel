@@ -28,7 +28,12 @@ do
   DB_PORT=${DB_URI[3]}
   DB_NAME=${DB_URI[4]}
 
-  echo "Setting ${STUNNEL_URL}_STUNNEL config var"
+  echo "DB_URI ${DB_URI} "
+  echo "DB_USER ${DB_USER}"
+  echo "DB_PASS ${DB_PASS}"
+  echo "DB_HOST ${DB_HOST}"
+  echo "DB_HOST ${DB_PORT}"
+  echo "DB_HOST ${DB_NAME}"
 
   export ${STUNNEL_URL}_STUNNEL=redis://$DB_USER:$DB_PASS@127.0.0.1:600${n}/$DB_NAME
 
