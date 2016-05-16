@@ -22,6 +22,10 @@ run-stunnel() {
   rm -f "$psmgr"
   mkfifo "$psmgr"
 
+  FILE="vendor/stunnel/stunnel.conf"
+  echo "*** Hello File - $FILE contents ***"
+  cat $FILE
+  
   # Start processes.
   aux-start stunnel SIGINT vendor/stunnel/bin/stunnel vendor/stunnel/stunnel.conf
   app-start SIGTERM "$@"
