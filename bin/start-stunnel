@@ -26,6 +26,10 @@ run-stunnel() {
   echo "*** Hello File - $FILE contents ***"
   cat $FILE
   
+  FILE="/app/vendor/stunnel/stunnel.conf"
+  echo "*** Hello File2 - $FILE contents ***"
+  cat $FILE
+  
   # Start processes.
   aux-start stunnel SIGINT vendor/stunnel/bin/stunnel vendor/stunnel/stunnel.conf
   app-start SIGTERM "$@"
