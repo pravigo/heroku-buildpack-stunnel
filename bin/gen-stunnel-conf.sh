@@ -23,10 +23,10 @@ do
   DB=$(echo $STUNNEL_URL_VALUE | perl -lne 'print "$1 $2 $3 $4 $5 $6 $7" if /^redis:\/\/([^:]*):([^@]+)@(.*?):(.*?)\/(\\?.*)?$/')
   DB_URI=( $DB )
   DB_USER=${DB_URI[0]}
-  DB_PASS=${DB_URI[1]}
-  DB_HOST=${DB_URI[2]}
-  DB_PORT=${DB_URI[3]}
-  DB_NAME=${DB_URI[4]}
+  DB_PASS=${DB_URI[2]}
+  DB_HOST=${DB_URI[3]}
+  DB_PORT=${DB_URI[4]}
+  DB_NAME=${DB_URI[5]}
 
   echo "DB_URI ${DB_URI} "
   echo "DB_USER ${DB_USER}"
