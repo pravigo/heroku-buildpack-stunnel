@@ -20,7 +20,7 @@ for STUNNEL_URL in $STUNNEL_URLS
 do
   eval STUNNEL_URL_VALUE=\$$STUNNEL_URL
   #TODO: Generalize away that "redis" bit in the next line
-  DB=$(echo $STUNNEL_URL_VALUE | perl -lne 'print "$1 $2 $3 $4 $5 $6 $7" if /^redis:\/\/([^:]+):([^@]+)@(.*?):(.*?)\/(.*?)(\\?.*)?$/')
+  DB=$(echo $STUNNEL_URL_VALUE | perl -lne 'print "$1 $2 $3 $4 $5 $6 $7" if /^redis:\/\/([^:]*):([^@]+)@(.*?):(.*?)\/(\\?.*)?$/')
   DB_URI=( $DB )
   DB_USER=${DB_URI[0]}
   DB_PASS=${DB_URI[1]}
